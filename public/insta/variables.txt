@@ -1,0 +1,25 @@
+App-ID: 375333716860139
+
+App-Secret: 0b037320e21fa28df64f814e219e1fc2
+
+redirect: https://github.com/bnwatch64
+
+AQBgiTjOXTJgLLh2C7XNM7uAUDEd-OwJKck2vCJcn_Bz9PcMplrsQCvIOeHy40JzAGdbcPFjKSzFzT0nplwMSNWnfRfsJ4VVthhfo00hrPe-Daig99tT7W6BWILJGqrPhUBnd-NXPG4WQTaH94NrcjcAsRJGbLZ54QBj4EkVOJKN23U9STGInaRXDFJgIDRpxJQbR6vs-v-33IDUIly0MTcpaUJOD9b_CplkW-zCMdczsw
+
+https://api.instagram.com/oauth/authorize
+  ?client_id=1641045136066756
+  &redirect_uri={redirect-uri}
+  &scope=user_profile,user_media
+  &response_type=code
+
+
+
+curl -X POST \ https://api.instagram.com/oauth/access_token \ -F client_id=375333716860139 \ -F client_secret=0b037320e21fa28df64f814e219e1fc2 \ -F grant_type=authorization_code \ -F redirect_uri=https://github.com/bnwatch64 \ -F code=AQBgiTjOXTJgLLh2C7XNM7uAUDEd-OwJKck2vCJcn_Bz9PcMplrsQCvIOeHy40JzAGdbcPFjKSzFzT0nplwMSNWnfRfsJ4VVthhfo00hrPe-Daig99tT7W6BWILJGqrPhUBnd-NXPG4WQTaH94NrcjcAsRJGbLZ54QBj4EkVOJKN23U9STGInaRXDFJgIDRpxJQbR6vs-v-33IDUIly0MTcpaUJOD9b_CplkW-zCMdczsw
+
+short-Access-Token: IGQVJYb214NV95Y200STJvT3BUZA2JjNkoxQW9aaWJYRXA5ajVsVjRkd3p2OXJlcmpIU2VBVFJWYWxiUUhBWEV3YVVIUUhPQloyZADZAtYXA5U0lIVkR2SlVFbWlDSHNvTFE0djhVVURIU29ZAbEh1cm9LNVB2YzhTZAjZAaR2Fr
+
+user_id: 17841400496387915
+
+curl -i -X GET "https://graph.instagram.com/access_token ?grant_type=ig_exchange_token &client_secret=0b037320e21fa28df64f814e219e1fc2 &access_token=IGQVJYb214NV95Y200STJvT3BUZA2JjNkoxQW9aaWJYRXA5ajVsVjRkd3p2OXJlcmpIU2VBVFJWYWxiUUhBWEV3YVVIUUhPQloyZADZAtYXA5U0lIVkR2SlVFbWlDSHNvTFE0djhVVURIU29ZAbEh1cm9LNVB2YzhTZAjZAaR2Fr"
+
+long_access-Token: IGQVJYeDBaRTVkQ3BySGlvemZAYeTdHZAWg2aDFESkxtSDJlcGFaaFR1aTRtWmU1UnVJTGF1X0pkcDg1SDVDbGxmQnNkd1F5YWtLLWN2aEJ0bG53MHVFRjd2TlpBTDEybGtaVk9QWVRR
