@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <link rel="stylesheet" href="../stylesheets/lux.css"/>
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
   <head>
     <meta charset="utf-8">
@@ -8,7 +10,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">BENCH&copy;</a>
+      <a class="navbar-brand">BENCH&copy;</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,8 +46,18 @@
       </div>
     </div>
 
-    <button type="button" name="button" id="button">Daten anzeigen</button>
-    <div id="output"></div>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-3">Listen to our selected Podcasts!</h1>
+        <p class="lead">From Web-Development to learning some wild new language whilest listening to some Hip-Hop expertise - our exclusive selection of Spotify shows got you covered for every situation!</p>
+        <hr class="my-4">
+        <div id="output"></div>
+        <p class="lead">
+          <button type="button" class="btn btn-primary btn-lg" id="button">Refresh</button>
+        </p>
+      </div>
+    </div>
+
   </body>
 
   <script src="spotify.js"></script>

@@ -10219,3 +10219,61 @@ th {
   transition:all 300ms ease-in-out;
   transform:translate(-50%,-50%) scale(1);
 }
+
+
+/*Style for picture grid*/
+
+
+/* Create two equal columns that floats next to each other */
+.grid-column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.grid-column img {
+  margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.grid-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/*Overlay on mouse hover over pictures*/
+
+.overlay-container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.overlay-container:hover .image {
+  opacity: 0.2;
+}
+
+.overlay-container:hover .middle {
+  opacity: 1;
+}

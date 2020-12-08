@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <link rel="stylesheet" href="../stylesheets/lux.css"/>
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
   <head>
     <meta charset="utf-8">
-    <title>Bench Homepage - Our Podcasts</title>
+    <title>Bench Homepage - Our Stocks</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">BENCH&copy;</a>
+      <a class="navbar-brand">BENCH&copy;</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,31 +46,32 @@
       </div>
     </div>
 
-    <h1>Aktienkurs</h1>
-    <table>
-      <tr>
-        <td>
-          <fieldset>
-          <input type="radio" id="apple" name="companyRadio" value="AAPL" checked="checked">
-          <label for="apple">Apple</label>
-          <input type="radio" id="ibm" name="companyRadio" value="IBM">
-          <label for="ibm">IBM</label>
-          <input type="radio" id="amazon" name="companyRadio" value="AMZN">
-          <label for="amazon">Amazon</label>
-          </fieldset>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="chart-container" style="position: relative; height:30vh; width:60vw">
-            <canvas id="stockChart"></canvas>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td><div id="companyData"></div></td>
-      </tr>
-    </table>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-3">Keep track of our favorite stocks!</h1>
+        <p class="lead">Due to low interest rates and an ever-rising inflation, investing your money in the right place is more important than ever - take a look at our Top 3 companies at the US stock market.</p>
+        <hr class="my-4">
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 50%; margin-left: 25%;">
+          <label class="btn btn-primary active">
+            <input type="radio" name="companyRadio" id="apple" value="AAPL" checked="checked"> Apple
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="companyRadio" id="ibm" value="IBM"> IBM
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="companyRadio" id="amazon" value="AMZN"> Amazon
+          </label>
+        </div>
+
+        <div class="chart-container" style="position: relative; padding-top: 1em; padding-bottom: 1em;">
+          <canvas id="stockChart"></canvas>
+        </div>
+
+        <hr class="my-4">
+        <div id="companyData"></div>
+      </div>
+    </div>
 
   </body>
 

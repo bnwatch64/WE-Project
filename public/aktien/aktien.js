@@ -8,18 +8,38 @@ var chart = new Chart(ctx, {
 
   // The data for our dataset
   data: {
-      labels: [], //pass labels
-      datasets: [{
-          label: "",
-          borderColor: 'rgb(255, 99, 132)',
-          data: []  //pass data
-      }]
+    labels: [], //pass labels
+    datasets: [{
+      label: "",
+      borderColor: 'rgb(145, 154, 161)',
+      data: []  //pass data
+    }]
   },
 
   // Configuration options go here
   options: {
-      responsive: true,
-      aspectRatio: 1.5
+    responsive: true,
+    aspectRatio: 1.75,
+    pointRadius: .25,
+    pointHoverRadius: 1,
+    legend: {
+      display: false
+    },
+    tooltips: {
+      callbacks: {
+         label: function(tooltipItem) {
+                return tooltipItem.yLabel;
+         }
+      }
+    },
+    scales: {
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'USD'
+        }
+      }]
+    }
   }
 
 });
