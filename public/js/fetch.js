@@ -6,11 +6,8 @@ class Fetch {
   
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=${input}&units=metric&appid=${myKey}`
-      );
-  
+      )
       const data = await response.json();
-  
-      console.log("Fetch: "+data);
   
       return data;
       

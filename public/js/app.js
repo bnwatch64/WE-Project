@@ -13,12 +13,23 @@ function togglePopup(){
     const currentVal = search.value;
 
    ft.getCurrent(currentVal).then((data) => {
+      if(data.cod != "404"){
+      ui.populate(data);   
 
-      ui.populate(data);
+      displayPopup();}
 
-    });
+      else{
+        let alertContent = `
+          <div class="alert alert-dismissible alert-warning" style="display: block;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4 class="alert-heading">Action failed!</h4>
+            <p class="mb-0">Invalid input! Please try again with another city.</p>
+          </div>
+        `;
 
-    displayPopup();
+        document.getElementById('alert-box').innerHTML = alertContent;
+      }
+  });
 }
 
 function disPopup(){

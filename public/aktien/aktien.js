@@ -165,9 +165,29 @@ async function getMostRecentValue(company) {
     redirect: 'follow'
   };
 
-  let response = await fetch("https://www.alphavantage.co/query?apikey=" + apiKey + "&function=TIME_SERIES_INTRADAY&interval=1min&symbol=" + company, requestOptions);
-  let json = await response.json();
-  let mostRecentValue = await Object.values(json["Time Series (1min)"])[0]["4. close"];
+  var mostRecentValue;
+
+  await fetch("https://www.alphavantage.co/query?apikey=" + apiKey + "&function=TIME_SERIES_INTRADAY&interval=1min&symbol=" + company, requestOptions)
+    .then(response => response.json())
+    .then(result => {
+
+      mostRecentValue = Object.values(result["Time Series (1min)"])[0]["4. close"];
+
+    })
+    .catch(error => {
+
+      let alertContent = `
+        <div class="alert alert-dismissible alert-warning" style="display: block;">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4 class="alert-heading">Action failed!</h4>
+          <p class="mb-0">This page uses the alphavantage API to fetch the data for displaying our share histories. As this API is free to use, it also comes with a limit of calls (max. 5 per minute, 500 per month). It seems like you've reached one of these limits - please try again!</p>
+        </div>
+      `;
+
+      document.getElementById('alert-box').innerHTML = alertContent;
+
+    })
+
 
   return mostRecentValue;
 

@@ -9,7 +9,7 @@ class UI {
       //de-structure vars
 
       //add them to inner HTML
-
+      console.log("DATA:");
       console.log(data);
 
       var temp = [];
