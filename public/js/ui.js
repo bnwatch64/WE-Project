@@ -6,11 +6,6 @@ class UI {
     }
 
     populate(data) {
-      //de-structure vars
-
-      //add them to inner HTML
-      console.log("DATA:");
-      console.log(data);
 
       var temp = [];
       var x = 0;
@@ -43,12 +38,6 @@ class UI {
       var x = 0;
       var y = 0;
 
-      console.log("--------------");
-      for(y = 0; y<6; y++){
-          console.log(temp[y]);
-      }
-      console.log("-------------");
-
       //max temp: [day][max]
       var max = [];
 
@@ -67,54 +56,34 @@ class UI {
 
       y = 0;
 
-      console.log("++++MAX++++");
-      for(y = 0; y<6; y++){
 
-        console.log(max[y]);
-      }
-      console.log("++++MIN++++");
-      for(y = 0; y<6; y++){
-
-        console.log(min[y]);
-      }
-      console.log("+++++++++");
-
-
-      console.log("*********");
       var k = 0;
       var day0 = new Date((data.list[k].dt - 60*60) * 1000);
       day0 = day0.toString();
       day0 = day0.slice(0, 15);
-      console.log("day0: "+ day0);
       k = k + temp[0].length;
       var day1 = new Date((data.list[k].dt - 60*60) * 1000);
       day1 = day1.toString();
       day1 = day1.slice(0, 15);
-      console.log("day1: "+ day1);
       k = k + temp[1].length;
       var day2 = new Date((data.list[k].dt - 60*60) * 1000);
       day2 = day2.toString();
       day2 = day2.slice(0, 15);
-      console.log("day2: "+ day2);
       k = k + temp[2].length;
       var day3 = new Date((data.list[k].dt - 60*60) * 1000);
       day3 = day3.toString();
       day3 = day3.slice(0, 15);
-      console.log("day3: "+ day3);
       k = k + temp[2].length;
       var day4 = new Date((data.list[k].dt - 60*60) * 1000);
       day4 = day4.toString();
       day4 = day4.slice(0, 15);
-      console.log("day4: "+ day4);
       k = k + temp[3].length;
       var day5 = '';
       if(k<39){
         day5 = new Date((data.list[k].dt - 60*60) * 1000);
         day5 = day5.toString();
         day5 = day5.slice(0, 15);
-        console.log("day5: "+ day5);
         k = k + temp[4].length;
-        console.log("*********");
       }
 
       //init of arrays for rain, humidity, description and icon
@@ -138,18 +107,14 @@ class UI {
 
       //calculation of remaining datas for today
       var z = temp[0].length;
-      console.log("z: "+ z);
 
       //calculation if first data morning, noon or evening
 
       var p = (24-(z*3));
-      console.log("first data time: "+ p);
-
 
 
     //morning, noon and evening
       if(p < 12){
-          console.log("all data for first day possible");
 
           var u = 0;
           if(p < 3){u = 2;}
@@ -158,11 +123,9 @@ class UI {
             for(var s = 0; s<5; s++){
                 for(var t = 0; t < 3; t++){
 
-                console.log("u:"+u);
 
                 try{
                     rain[s][t] = data.list[u].rain["3h"];
-                    console.log("HIT");
 
                 }
                 catch{rain[s][t] = 0;}
@@ -214,10 +177,7 @@ class UI {
 
                 if(p < 12){
                     try{
-                    rain[0][j] = data.list[c + 1].rain["3h"];
-                    console.log("!");
-                    console.log("...............");
-                    console.log("rain: "+ data.list[c + 1].rain["3h"]);}
+                    rain[0][j] = data.list[c + 1].rain["3h"];}
 
                     catch{rain[0][j] = 0;}
 
@@ -230,9 +190,7 @@ class UI {
                 else{
 
                   try{
-                    rain[0][j] = data.list[c].rain["3h"];
-                    console.log("...............");
-                    console.log("rain: "+ data.list[c].rain["3h"]);}
+                    rain[0][j] = data.list[c].rain["3h"];}
 
                   catch{rain[0][j] = 0;}
 
@@ -246,15 +204,12 @@ class UI {
             }
             var u;
             if(w){u = c +2;}else{u = c +3;}
-            console.log("first u:"+u);
             for(var s = 1; s<5; s++){
                 for(var t = 0; t < 3; t++){
 
-                console.log("u:"+u);
 
                 try{
                     rain[s][t] = data.list[u].rain["3h"];
-                    console.log("HIT");
 
                 }
                 catch{rain[s][t] = 0;}
@@ -268,7 +223,6 @@ class UI {
             u = u +2;
             }
 
-        console.log("U:"+u);
             try{rain[5][0] = data.list[38].rain["3h"];}
             catch{rain[5][0] = 0;}
             hum[5][0] = data.list[38].main.humidity;
@@ -312,10 +266,7 @@ class UI {
 
               if(p < 18){
                   try{
-                  rain[0][2] = data.list[1].rain["3h"];
-                  console.log("!");
-                  console.log("...............");
-                  console.log("rain: "+ data.list[1].rain["3h"]);}
+                  rain[0][2] = data.list[1].rain["3h"];}
 
                   catch{rain[0][2] = 0;}
                   hum[0][2] = data.list[1].main.humidity;
@@ -325,9 +276,7 @@ class UI {
               else{
 
                 try{
-                  rain[0][2] = data.list[0].rain["3h"];
-                  console.log("...............");
-                  console.log("rain: "+ data.list[0].rain["3h"]);}
+                  rain[0][2] = data.list[0].rain["3h"];}
 
                 catch{rain[0][2] = 0;}
 
@@ -344,11 +293,9 @@ class UI {
               for(var s = 1; s<5; s++){
                   for(var t = 0; t < 3; t++){
 
-                  console.log("u:"+u);
 
                   try{
                       rain[s][t] = data.list[u].rain["3h"];
-                      console.log("HIT");
 
                   }
                   catch{rain[s][t] = 0;}
@@ -400,48 +347,6 @@ class UI {
           </div>
       </div>`;
 
-      }
-
-
-      console.log(",,,,,,,,,,,,");
-
-      console.log("T1");
-      console.log(rain[0][0]);
-      console.log(rain[0][1]);
-      console.log(rain[0][2]);
-      console.log("T2");
-      console.log(rain[1][0]);
-      console.log(rain[1][1]);
-      console.log(rain[1][2]);
-      console.log("T3");
-      console.log(rain[2][0]);
-      console.log(rain[2][1]);
-      console.log(rain[2][2]);
-      console.log("T4");
-      console.log(rain[3][0]);
-      console.log(rain[3][1]);
-      console.log(rain[3][2]);
-      console.log("T5");
-      console.log(rain[4][0]);
-      console.log(rain[4][1]);
-      console.log(rain[4][2]);
-      console.log("T6");
-      console.log(rain[5][0]);
-      console.log(rain[5][1]);
-      console.log(rain[5][2]);
-
-
-      console.log(",,,,,,,,,,,,");
-
-      for(u = 0; u < 40; u++){
-        console.log(data.list[u].main.humidity);
-      }
-
-
-      console.log(",,,,,,,,,,,,");
-
-      for(u = 0; u < 40; u++){
-        console.log(data.list[u].weather["0"].description);
       }
 
 
@@ -502,7 +407,7 @@ class UI {
 
           `;
 
-      if(day5 != ''){ //KONTROLLIEREN OB MIT '' MÖGLICH! PROBLEM: START BEI 0:00 - 1:30 UHR
+      if(day5 != ''){ 
 
          if(p > 15){
 
