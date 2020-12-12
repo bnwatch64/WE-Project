@@ -1,20 +1,27 @@
 {
-  "name": "DHBWPortalDemo",
-  "version": "0.0.1",
-  "description": "DHBW Home Page with Node.js",
+  "name": "we-project",
+  "version": "1.0.0",
+  "description": "Basic web server for the bench website.",
+  "main": "myWebServer.js",
   "scripts": {
-    "start": "node myWebServer"
+    "start": "node myWebServer.js || (npm i && node myWebServer.js)"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnwatch64/WE-Project.git"
+  },
+  "keywords": [
+    "webserver",
+    "bench",
+    "hosting"
+  ],
+  "author": "Benjamin Ader, Christian Caniglia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bnwatch64/WE-Project/issues"
+  },
+  "homepage": "https://github.com/bnwatch64/WE-Project#readme",
   "dependencies": {
-    "body-parser": "^1.13.3",
-    "chart.js": "^2.9.4",
-    "express": "^4.17.1",
-    "express-basic-auth": "^1.2.0",
-    "jquery": "^3.5.1",
-    "request": "^2.88.0"
-  },
-  "engines": {
-    "node": "4.8.4",
-    "npm": "2.15.11"
+    "express": "^4.17.1"
   }
 }
