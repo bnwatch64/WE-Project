@@ -1,4 +1,4 @@
-//These tokens normaly would not be written stored in plain code due to security reasons. For further information, check the documentation!
+//These tokens normaly would not be written stored in plain code due to security reasons. For further information, check the documentation.
 let longAccessToken = "IGQVJWZAUE0MTlsR2NNTk51ZAmRxUTVWOWxxM1h2NFRGYUcyOVBxaXJWdnR6UjlsWWt3WllpYVBQbm1MLWd6QTV2WW5fWGhHRUp6UXAzb1lRdHM2SUtNOFVWbk5RRHJNZAFZAEeTItOU5n";
 let userID = "17841400897289599";
 
